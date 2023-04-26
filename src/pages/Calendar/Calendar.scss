@@ -1,0 +1,122 @@
+@import "../../scss/import.scss";
+.calendar {
+  height: 100%;
+  .calendar__main {
+    height: calc(100% - 120px);
+    position: relative;
+  }
+  &__head {
+    @include flexCenter(space-between);
+    margin-bottom: 32px;
+  }
+  &__options {
+    @include flexCenter(space-between);
+    .input {
+      display: flex;
+      align-items: center;
+      .wrapper {
+        width: 220px;
+        height: 44px;
+        position: relative;
+        .display {
+          width: 100%;
+          height: 100%;
+          padding: 10px 20px;
+          cursor: pointer;
+          position: absolute;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid $grey-light-cl;
+          border-radius: 12px;
+          font-weight: 600;
+          font-size: $fz-big;
+          pointer-events: none;
+          span {
+            display: inline-block;
+            margin: 0 10px;
+          }
+        }
+        .react-datepicker-wrapper {
+          width: 100%;
+          height: 100%;
+          background-color: white;
+          .react-datepicker__input-container {
+            height: 100%;
+            width: 100%;
+            input {
+              cursor: pointer;
+              width: 100%;
+              height: 100%;
+              opacity: 0;
+            }
+          }
+        }
+        .react-datepicker__tab-loop {
+          .react-datepicker-popper {
+            z-index: 10 !important;
+          }
+        }
+      }
+      .button {
+        margin-left: 16px;
+        @include flexCenter;
+        .item {
+          cursor: pointer;
+          width: 24px;
+          height: 24px;
+          @include flexCenter;
+          border-radius: 50%;
+          border: 1px solid $grey-light-cl;
+          margin-right: 8px;
+        }
+      }
+    }
+    .tab {
+      @include flexCenter(space-between);
+      font-size: $fz-small;
+      font-weight: 500;
+      color: $blue-cl;
+      background-color: rgba($blue-cl, 0.1);
+      border-radius: 12px;
+      overflow: hidden;
+      padding: 4px;
+      .item {
+        border-radius: 12px;
+        padding: 10px 16px;
+        cursor: pointer;
+        &.active {
+          background-color: $white-cl;
+        }
+      }
+    }
+    .status {
+      @include flexCenter(space-between);
+      .item {
+        @include flexCenter;
+        font-weight: 500;
+        &:nth-child(2) {
+          margin: 0 24px;
+        }
+        .circle {
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          &.--green {
+            background-color: #3cd5a3;
+          }
+          &.--blue {
+            background-color: #1a9aff;
+          }
+          &.--grey {
+            background-color: $grey-cl;
+          }
+        }
+        .name {
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+}
+

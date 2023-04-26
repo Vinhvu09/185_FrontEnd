@@ -1,0 +1,114 @@
+@import "../../../../scss/import.scss";
+.image-review {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  .image {
+    height: calc(100% - 50px);
+    position: relative;
+    .operation {
+      position: absolute;
+      right: 20%;
+      bottom: 10%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 15px;
+      color: $blue-cl;
+      cursor: pointer;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      img,
+      span {
+        pointer-events: none;
+      }
+    }
+    .popup-insert {
+      position: absolute;
+      right: 5%;
+      bottom: 15%;
+      width: 90%;
+      height: 180px;
+      background: $white-cl;
+      border: 1px solid $grey-light-cl;
+      border-radius: 8px;
+      .row {
+        height: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .left {
+          width: 30%;
+          border-right: 1px solid $grey-light-cl;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .right {
+          width: 70%;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          img {
+            width: 20%;
+            -o-object-fit: cover;
+            object-fit: cover;
+            cursor: pointer;
+          }
+        }
+      }
+      .row:not(:last-child) {
+        border-bottom: 1px solid $grey-light-cl;
+      }
+    }
+    .inserted {
+      position: absolute;
+      bottom: 10%;
+      right: 18%;
+      img {
+        width: 120px;
+        -o-object-fit: cover;
+        object-fit: cover;
+      }
+    }
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .pagination {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    .prev,
+    .next {
+      border: 1px solid $black-light-cl;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .next {
+      transform: rotate(180deg);
+    }
+    span {
+      font-style: normal;
+      font-weight: 400;
+      font-size: $fz-small;
+      line-height: 17px;
+      color: $black-light-cl;
+    }
+  }
+}

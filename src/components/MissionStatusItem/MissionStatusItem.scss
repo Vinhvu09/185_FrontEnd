@@ -1,0 +1,55 @@
+@import "../../scss/import.scss";
+.missionStatusItem {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 14px;
+  border: 1px solid $grey-light-cl;
+  cursor: pointer;
+  &__popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($grey-cl, 0.5);
+    z-index: 999;
+    @include flexCenter;
+    cursor: auto;
+  }
+  .left {
+    display: flex;
+    align-items: center;
+    .square {
+      margin-right: 16px;
+      width: 12px;
+      height: 12px;
+      border-radius: 2px;
+    }
+    .input {
+      width: 100%;
+      input {
+        width: 100%;
+        outline: none;
+        border: none;
+        font-size: 16px;
+        font-weight: 400;
+      }
+    }
+  }
+  .right {
+    @include flexCenter(space-between);
+    .people {
+      @include flexCenter;
+      justify-content: flex-end;
+      min-width: 120px;
+      height: 100%;
+    }
+    .time {
+      display: flex;
+      font-size: $fz-small;
+      .hour {
+        margin-right: 5px;
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.dataItemMonth {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 400;
+  font-size: 12px;
+  color: #434547;
+  border-radius: 2px;
+  background-color: red;
+  padding: 2px 8px;
+  &__name{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

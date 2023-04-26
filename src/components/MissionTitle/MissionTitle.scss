@@ -1,0 +1,29 @@
+@import "../../scss/import.scss";
+.missionTitle {
+  margin: 26px 0;
+  @include flexCenter(space-between);
+  .left {
+    @include flexCenter;
+    cursor: pointer;
+    .img {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: $grey-light-cl;
+      @include flexCenter;
+      margin-right: 8px;
+      &.open {
+        img {
+          @include transform(rotate(0));
+        }
+      }
+      img {
+        @include transform(rotate(-90deg));
+      }
+    }
+    .name {
+      font-weight: 600;
+      font-size: $fz-big;
+    }
+  }
+}

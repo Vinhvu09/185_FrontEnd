@@ -1,0 +1,17 @@
+@import "../../scss/import.scss";
+.uploadGroup {
+  text-align: center;
+  svg {
+    height: 50px;
+    width: 70px;
+    margin-bottom: 20px;
+  }
+  .main,
+  .sub {
+    color: $grey-cl;
+  }
+  &__button {
+    margin-top: 16px;
+    @include flexCenter;
+  }
+}

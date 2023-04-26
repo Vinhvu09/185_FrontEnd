@@ -1,0 +1,129 @@
+@import "../../scss/import.scss";
+.missionCreatePopup {
+  width: 960px;
+  max-height: 95vh;
+  overflow-y: auto;
+  padding: 40px 0;
+  background-color: $white-cl;
+  border-radius: 6px;
+  h3 {
+    text-align: center;
+    font-size: $fz-bigger;
+    margin-bottom: 24px;
+  }
+  &__main {
+    margin: 0 auto;
+    max-width: 660px;
+    &--group {
+      margin-bottom: 24px;
+      .title {
+        font-weight: 600;
+      }
+      &.--mission {
+        .title {
+          margin-bottom: 18px;
+        }
+        .wrapper {
+          display: flex;
+          .group__left {
+            margin-right: 80px;
+            .checkboxItem {
+              color: $grey-cl;
+            }
+            .checkboxItem:not(:last-child) {
+              margin-bottom: 20px;
+            }
+          }
+          .peopleReceive {
+            position: relative;
+            display: flex;
+            p {
+              font-weight: 600;
+              font-size: $fz-small;
+              margin-right: 20px;
+            }
+            .peopleList {
+              margin-top: -5px;
+            }
+          }
+        }
+      }
+      &.--time {
+        display: flex;
+        align-items: center;
+        margin-bottom: 44px;
+        margin-top: 40px;
+        .timeWrapper {
+          margin-left: 18px;
+        }
+      }
+      &.--files {
+        .input {
+          margin-top: 8px;
+          margin-bottom: 40px;
+          border: 1px solid $grey-light-cl;
+          border-style: dashed;
+          padding: 50px;
+          border-radius: 6px;
+          position: relative;
+          .uploadGroup {
+            .main {
+              color: $black-cl;
+              font-weight: 500;
+              margin-bottom: 12px;
+            }
+            .sub {
+              font-size: $fz-small;
+            }
+          }
+          input {
+            cursor: pointer;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0;
+          }
+        }
+      }
+      &.--button {
+        display: flex;
+        justify-content: flex-end;
+        .mainButton:not(:last-child) {
+          margin-right: 14px;
+        }
+      }
+    }
+    & > label {
+      .title {
+        margin-bottom: 8px;
+      }
+      input {
+        width: 100%;
+        padding: 10px 12px;
+        outline: none;
+        border: 1px solid $grey-light-cl;
+        border-radius: 6px;
+        &:focus {
+          border: 1px solid #1a48e9;
+          box-shadow: 0px 0px 4px #6dcef5;
+        }
+      }
+      textarea {
+        width: 100%;
+        resize: none;
+        padding: 10px 12px;
+        height: 160px;
+        outline: none;
+        border: 1px solid $grey-light-cl;
+        border-radius: 6px;
+        font-size: $fz-small;
+        &:focus {
+          border: 1px solid #1a48e9;
+          box-shadow: 0px 0px 4px #6dcef5;
+        }
+      }
+    }
+  }
+}

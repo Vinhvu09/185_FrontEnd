@@ -1,0 +1,37 @@
+@import "../../scss/import.scss";
+.fileName {
+  position: relative;
+  max-width: 300px;
+  height: 135px;
+  padding: 16px 22px 0 22px;
+  border-radius: 8px;
+  border: 1px solid $grey-light-cl;
+  cursor: pointer;
+  .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    right: 15px;
+
+    &.--come {
+      top: 12px;
+    }
+    &.--go {
+      top: 35px;
+    }
+  }
+  .wrapper {
+    @include flexCenter(space-between);
+    font-size: $fz-small;
+    margin-top: 10px;
+    .name {
+      @include overText(2);
+      max-width: 70%;
+      font-weight: 600;
+    }
+    .num {
+      font-weight: 500;
+      color: $grey-light-cl;
+    }
+  }
+}

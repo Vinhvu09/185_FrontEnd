@@ -1,0 +1,147 @@
+@import "../../scss/import.scss";
+.searchAdvanced {
+  &__popup {
+    position: relative;
+    width: 95vw;
+    height: 95vh;
+    background: #ffffff;
+    box-shadow: 0px 0px 10px rgba(136, 136, 136, 0.1);
+    border-radius: 12px;
+    padding: 24px;
+    overflow: scroll;
+    &--close {
+      position: absolute;
+      right: 12px;
+      top: 12px;
+      cursor: pointer;
+    }
+    &--button {
+      display: flex;
+      .mainButton {
+        margin-right: 8px;
+        img {
+          width: 16px;
+          object-fit: cover;
+        }
+      }
+      font-size: 14px;
+    }
+    &--table {
+      margin-top: 16px;
+      border-radius: 12px;
+      width: 100%;
+      overflow: hidden;
+      border-collapse: collapse;
+      box-shadow: 0px 0px 10px rgba(136, 136, 136, 0.1);
+      thead {
+        background: rgba(26, 72, 233, 0.1);
+        th {
+          font-weight: 600;
+          .thWrapper {
+            padding: 22px 16px;
+            color: $blue-cl;
+            img {
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+      tbody {
+        font-size: 14px;
+        tr {
+          border-bottom: 0.5px solid #e0e0e0;
+          td {
+            padding: 22px 16px;
+            text-align: center;
+          }
+        }
+      }
+    }
+    &--paginate {
+      @include flexCenter(space-between);
+      margin-top: 22px;
+      .left {
+        display: flex;
+        align-items: center;
+        p {
+          font-size: 14px;
+          color: #888888;
+        }
+        .inputGroup {
+          width: 50px;
+          position: relative;
+          margin: 0 8px;
+          display: flex;
+          padding: 2px 10px;
+          align-items: center;
+          border: 1px solid #dbe0e5;
+          border-radius: 2px;
+
+          input {
+            width: 100%;
+            height: 100%;
+            outline: none;
+            border: none;
+          }
+          img {
+            position: absolute;
+            right: 10px;
+          }
+        }
+      }
+      .right {
+        display: flex;
+        p {
+          &.active {
+            background: rgba(26, 72, 233, 0.1);
+            font-weight: 600;
+          }
+          cursor: pointer;
+          @include flexCenter;
+          width: 32px;
+          height: 32px;
+          border-radius: 6px;
+          font-size: 14px;
+        }
+        img {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  &__head {
+    @include flexCenter(space-between);
+  }
+  &__content {
+    margin: 50px 0;
+    box-shadow: 0px 0px 10px rgba(136, 136, 136, 0.1);
+    border-radius: 12px;
+    padding: 24px;
+    h3 {
+      font-weight: 600;
+      font-size: 20px;
+      margin-bottom: 24px;
+    }
+    &--wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      .dateGroup {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        input {
+          position: relative;
+        }
+      }
+    }
+  }
+  &__button {
+    margin-top: 64px;
+    display: flex;
+    justify-content: flex-end;
+    .mainButton {
+      margin-right: 8px;
+    }
+  }
+}

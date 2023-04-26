@@ -1,0 +1,156 @@
+@import "../../../../../../scss/import.scss";
+.editScheduleMain {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: calc((100% - 1440px) / 2);
+  top: 0;
+  z-index: 60;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  max-width: 1440px;
+  background-color: rgba($color: #000000, $alpha: 0.25);
+  &__main {
+    padding: 40px;
+    width: 70%;
+    height: 90vh;
+    gap: 24px;
+    display: flex;
+    overflow-y: scroll;
+    flex-direction: column;
+    background: #ffffff;
+    box-shadow: 0px 0px 10px rgba(136, 136, 136, 0.3);
+    border-radius: 10px;
+    position: relative;
+    &--close {
+      position: absolute;
+      top: 25px;
+      right: 25px;
+      cursor: pointer;
+    }
+    h1 {
+      text-align: center;
+      font-weight: 600;
+      font-size: $fz-bigger;
+      color: $black-cl;
+    }
+    &--form {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      .center {
+        display: flex;
+        justify-content: space-between;
+        .meetingTime {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          &__title {
+            font-weight: 500;
+            font-size: $fz-normal;
+            color: $black-cl;
+          }
+          &__time {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            &--left {
+              font-size: $fz-small;
+              color: $grey-cl;
+              display: block;
+              width: 24px;
+            }
+            &--right {
+              display: flex;
+              gap: 8px;
+              align-items: center;
+              .inputEditMeetingTime {
+                width: 28px;
+                height: 28px;
+                border: 1px solid $grey-light-cl;
+                border-radius: 4px;
+                text-align: center;
+
+                font-weight: 500;
+                font-size: $fz-small;
+                color: $black-cl;
+                &:focus-visible {
+                  outline: 0px !important   ;
+                  border: 1px solid $blue-cl;
+                  box-shadow: 0px 0px 4px #6dcef5 !important;
+                }
+              }
+              span {
+                font-size: $fz-small;
+                color: $grey-cl;
+              }
+            }
+          }
+        }
+      }
+      .participants {
+        font-weight: 500;
+        font-size: $fz-normal;
+        color: $black-cl;
+      }
+      .listInputUser {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .groupButton {
+        display: flex;
+        gap: 14px;
+        flex-direction: row-reverse;
+        position: relative;
+        .groupButton__cancel {
+          cursor: pointer;
+          padding: 8px 48px;
+          width: 130px;
+          height: 40px;
+          background: #ffffff;
+          border: 1px solid $blue-cl;
+          box-shadow: 0px 2px 6px rgba(28, 73, 143, 0.08);
+          border-radius: 6px;
+          font-weight: 600;
+          font-size: $fz-normal;
+          text-align: center;
+          color: $blue-cl;
+        }
+        .groupButton__save {
+          cursor: pointer;
+          padding: 8px 48px;
+          background: $blue-cl;
+          border: 1px solid $blue-cl;
+          box-shadow: 0px 2px 6px rgba(28, 73, 143, 0.08);
+          border-radius: 6px;
+          font-weight: 600;
+          font-size: 16px;
+          text-align: center;
+          color: #ffffff;
+        }
+        .groupButton__delete {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 16px;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          cursor: pointer;
+          svg {
+            pointer-events: none;
+          }
+          &--text {
+            pointer-events: none;
+            font-weight: 600;
+            font-size: $fz-normal;
+            color: #e62614;
+          }
+        }
+      }
+    }
+  }
+}

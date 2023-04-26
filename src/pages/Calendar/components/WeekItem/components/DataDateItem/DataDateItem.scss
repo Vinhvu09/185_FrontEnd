@@ -1,0 +1,18 @@
+@import '../../../../../../scss/import.scss';
+.dataDateItem {
+  width: calc((100% - 20px)/ 7);
+  height: calc(150px * 24);
+  &__data{
+    border-right: 1px solid $grey-light-cl;
+    height: 100%;
+    position: relative;
+  }
+}
+
+.displayNone{
+    display: none;
+}
+
+.borderNone{
+    border:0px !important;
+}

@@ -1,0 +1,294 @@
+@import "../../scss/import.scss";
+.official-dispatch {
+  height: 100%;
+  .container-fluid {
+    height: calc(100% - 120px);
+    .tabs {
+      margin-top: 20px;
+    }
+    .group-operation {
+      height: 40px;
+      width: 100%;
+      margin-top: 40px;
+      display: flex;
+      justify-content: space-between;
+      .group-button {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .search {
+        width: 320px;
+        height: 100%;
+        position: relative;
+        &-svg {
+          position: absolute;
+          top: 50%;
+          right: 12px;
+          transform: translateY(-50%);
+          width: 24px;
+          height: 24px;
+          svg {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        &-input {
+          width: 100%;
+          height: 100%;
+          border: 1px solid #bcbcbc;
+          border-radius: 6px;
+          padding: 12px 16px;
+
+          &::-webkit-input-placeholder {
+            font-weight: 400;
+            font-size: $fz-small;
+            line-height: 20px;
+            color: $grey-cl;
+          }
+
+          &::-moz-placeholder {
+            font-weight: 400;
+            font-size: $fz-small;
+            line-height: 20px;
+            color: $grey-cl;
+          }
+
+          &:-ms-input-placeholder {
+            font-weight: 400;
+            font-size: $fz-small;
+            line-height: 20px;
+            color: $grey-cl;
+          }
+
+          &::-ms-input-placeholder {
+            font-weight: 400;
+            font-size: $fz-small;
+            line-height: 20px;
+            color: $grey-cl;
+          }
+
+          &::placeholder {
+            font-weight: 400;
+            font-size: $fz-small;
+            line-height: 20px;
+            color: $grey-cl;
+          }
+          &:focus-visible {
+            outline: none;
+          }
+        }
+      }
+    }
+    .main {
+      padding: 30px 24px 0 24px;
+      border: 1px solid $grey-light-cl;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+      padding: 32px 24px;
+      display: flex;
+      height: calc(100% - 80px);
+      gap: 30px;
+      .left-director {
+        width: 55%;
+        height: 100%;
+
+        .row {
+          padding: 22px 0px;
+          display: flex;
+          &-header {
+            font-weight: 600 !important;
+            font-size: $fz-normal !important;
+            line-height: 24px !important;
+            color: $blue-cl !important;
+            .date,
+            .name {
+              display: flex;
+              justify-content: center;
+            }
+          }
+          .checkbox {
+            width: 5%;
+            display: flex;
+            align-items: center;
+          }
+          .date {
+            width: 25%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          .name {
+            width: 70%;
+            display: flex;
+            align-items: center;
+          }
+        }
+        .list {
+          overflow-y: auto;
+          height: calc(100% - 70px);
+          .row {
+            .date {
+              font-weight: 400;
+              font-size: $fz-small;
+              line-height: 20px;
+              color: #000000;
+            }
+
+            .name {
+              font-weight: 400;
+              font-size: $fz-small;
+              line-height: 20px;
+              color: $black-light-cl;
+            }
+          }
+        }
+
+        .row:not(:last-child) {
+          border-bottom: 0.5px solid $grey-light-cl;
+        }
+      }
+      .right-director {
+        width: 40%;
+        height: 100%;
+        .row {
+          .right {
+            img {
+              width: 30% !important;
+              -o-object-fit: contain;
+              object-fit: contain;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__main {
+    height: 100%;
+    .head-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .title {
+        margin-bottom: 0 !important;
+      }
+      .upload-file {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 600;
+        font-size: $fz-normal;
+        line-height: 24px;
+        color: $blue-cl;
+        svg,
+        span {
+          pointer-events: none;
+        }
+      }
+    }
+    .wrapper {
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      height: calc(100% - 40px);
+      .left {
+        width: 45%;
+        height: 100%;
+        span {
+          font-weight: 500;
+          font-size: $fz-small;
+          color: #333333;
+        }
+        .react-datepicker-wrapper {
+          margin-top: 8px;
+
+          input {
+            width: 100%;
+            padding: 12px 10px;
+            font-weight: 500;
+            font-size: $fz-small;
+            line-height: 140%;
+            color: $black-light-cl;
+            border: 1px solid #d0d0d0;
+            border-radius: 6px;
+          }
+          .react-datepicker__close-icon {
+            display: none;
+          }
+        }
+        .list {
+          margin-top: 20px;
+          height: calc(100% - 140px);
+          overflow-y: auto;
+        }
+      }
+      right {
+        width: 40%;
+        height: 100%;
+      }
+    }
+    .upload-file-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .upload-file {
+        width: 40%;
+        height: 450px;
+        background: #fcfcfc;
+        border-radius: 8px;
+        padding: 48px 48px;
+        position: relative;
+        .statusLoading {
+          position: absolute !important;
+          left: 50%;
+          transform: translateX(-50%);
+          top: 340px;
+          width: calc(100% - 128px);
+        }
+        &-input {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: calc(100% - 96px);
+          height: calc(100% - 96px);
+          z-index: 2;
+          opacity: 0;
+        }
+        .svg {
+          position: absolute;
+          top: 24px;
+          right: 24px;
+          cursor: pointer;
+        }
+        .uploadGroup {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          border: 1px solid #e0e0e0;
+          border-style: dashed;
+          .main {
+            font-weight: 500;
+            font-size: $fz-normal;
+            line-height: 24px;
+            color: $black-cl;
+          }
+          .sub {
+            font-weight: 400;
+            font-size: $fz-small;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+  }
+}

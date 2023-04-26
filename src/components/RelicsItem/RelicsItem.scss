@@ -1,0 +1,81 @@
+@import "../../scss/import.scss";
+.relicsItem {
+  display: grid;
+  grid-template-columns: 90% 1fr;
+  height: 128px;
+  width: 100%;
+  padding: 0 24px;
+  background-color: $white-cl;
+  border-radius: 6px;
+  border: 1px solid rgba($grey-light-cl, 0.3);
+  transition: 0.3s all linear;
+  &:hover {
+    background-color: rgba($blue-cl, 0.1);
+  }
+  .wrapper {
+    width: 80%;
+    height: 60%;
+    display: flex;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    .avatar {
+      height: 100%;
+      width: 80px;
+      margin-right: 18px;
+      cursor: pointer;
+      flex-shrink: 0;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .name {
+        font-weight: 600;
+        @include overText(1);
+        span {
+          display: inline-block;
+          margin-right: 10px;
+        }
+      }
+      .address {
+        @include flexCenter(unset);
+        img {
+          width: 20px;
+          height: 20px;
+          margin-right: 7px;
+        }
+        span {
+          @include overText(1);
+          color: #8f8f8f;
+          font-size: $fz-small;
+        }
+      }
+      a {
+        margin-left: 26px;
+        color: $blue-cl;
+        font-size: $fz-small;
+      }
+    }
+  }
+  .options {
+    display: flex;
+    align-items: center;
+    flex-direction: flex-end;
+    justify-content: flex-end;
+    a {
+      @include flexCenter;
+      margin-right: 25px;
+    }
+    img {
+      width: 26px;
+      height: 26px;
+      cursor: pointer;
+    }
+  }
+}

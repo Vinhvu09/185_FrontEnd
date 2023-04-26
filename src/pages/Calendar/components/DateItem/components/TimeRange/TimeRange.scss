@@ -1,0 +1,24 @@
+    @import '../../../../../../scss/import.scss';
+.timeRange {
+  height: 208px;
+  display: flex;
+  justify-content: space-between;
+  &-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    span {
+      color: $black-light-cl;
+      font-weight: 500;
+      font-size: 16px;
+    }
+  }
+  &-right{
+    width: calc(100% - 100px);
+    padding-top: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px dashed $grey-light-cl;
+
+  }
+}

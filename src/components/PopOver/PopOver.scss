@@ -1,0 +1,68 @@
+.popOver {
+  position: absolute;
+  right: 0;
+  top: 35px;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  filter: drop-shadow(0px 0px 10px rgba(136, 136, 136, 0.3));
+  z-index: 99;
+  overflow-y: auto;
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &--right {
+      position: relative;
+      width: 20px;
+      height: 20px;
+      &.active {
+        .checkBox {
+          background: #1a48e9;
+        }
+      }
+      .checkBox {
+        width: 100%;
+        height: 100%;
+        border-radius: 2px;
+        border: 0.5px solid #888888;
+      }
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+  &.avatar {
+    width: 272px;
+    height: 280px;
+    .popOver__wrapper {
+      padding: 16px;
+      border: 0.5px solid #e0e0e0;
+      &--left {
+        display: flex;
+        align-items: center;
+        img {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          object-fit: cover;
+          margin-right: 10px;
+        }
+        p {
+          font-size: 14px;
+          font-weight: 400 !important;
+        }
+      }
+    }
+  }
+  &.filter {
+    width: 328px;
+    padding: 24px;
+    .popOver__wrapper {
+      margin-bottom: 12px;
+    }
+  }
+}

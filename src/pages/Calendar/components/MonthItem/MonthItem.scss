@@ -1,0 +1,41 @@
+@import "../../../../scss/import.scss";
+.monthItem {
+  width: 100%;
+  height: 100%;
+  padding: 36px 24px 24px;
+  ::-webkit-scrollbar {
+    width: 3px;
+  }
+  &__days {
+    height: 80px;
+    display: flex;
+    &--item {
+      position: relative;
+      padding: 32px 0px;
+      width: calc(100% / 7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 500;
+      font-size: $fz-normal;
+      color: $black-cl;
+      .borderRight {
+        position: absolute;
+        border-radius: 6px;
+        width: 0;
+        height: 24px;
+        border: 2px solid $grey-light-cl;
+        right: 0;
+      }
+    }
+  }
+  &__dates {
+    display: flex;
+    flex-wrap: wrap;
+    height: calc(100% - 80px);
+    overflow-y: auto;
+  }
+}
+.displayNone {
+  display: none;
+}

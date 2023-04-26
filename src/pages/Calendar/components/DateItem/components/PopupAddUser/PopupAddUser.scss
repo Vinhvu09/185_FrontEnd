@@ -1,0 +1,106 @@
+@import "../../../../../../scss/import.scss";
+.popUpAddUserSchedule {
+  position: absolute;
+  transform: translateY(-50%);
+  right: 0;
+  z-index: 10;
+  align-items: center;
+  top: 50px;
+  display: none;
+  &__form {
+    background-color: red;
+    width: 280px;
+    height: 300px;
+    z-index: 10;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translateY(calc(100% + 24px));
+    background: $white-cl;
+    border: 1px solid $grey-light-cl;
+
+    display: flex;
+    flex-direction: column;
+    padding: 0px 16px;
+    overflow-y: scroll;
+
+    &--userItemCheck {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 0.5px solid #e0e0e0;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      .left {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        pointer-events: none;
+
+        img {
+          width: 32px;
+          height: 32px;
+          border-radius: 100%;
+          pointer-events: none;
+        }
+        .name {
+          font-size: 14px;
+          color: $black-light-cl;
+          pointer-events: none;
+        }
+      }
+      input[type="checkbox"] {
+        accent-color: $blue-cl;
+      }
+      input {
+        width: 20px;
+        height: 20px;
+        border-radius: 2px;
+      }
+    }
+    &--userItemCheck:first-child {
+      border-top: 0px !important;
+    }
+  }
+  .popUpAddUserSchedule__save {
+    position: absolute;
+    top: 324px;
+    left: -280px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    width: 280px;
+    background: $blue-cl;
+    border: 1px solid $blue-cl;
+    box-shadow: 0px 2px 6px rgba(28, 73, 143, 0.08);
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    color: #ffffff;
+  }
+  .popUpAddUserSchedule__search {
+    position: absolute;
+    height: 40px;
+    left: -280px;
+    bottom: -50;
+    bottom: -26px;
+    border: 1px solid #e0e0e0;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    width: 280px;
+    padding: 16px;
+
+    &:focus-visible {
+      outline: none;
+    }
+    &::placeholder {
+      font-size: 14px;
+      color: $grey-cl;
+    }
+  }
+}
+
+.openPopupAddUserSchedule {
+  display: flex;
+}

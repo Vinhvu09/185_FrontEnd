@@ -1,0 +1,49 @@
+@import "../../../../../../scss/import.scss";
+.popUpListUser {
+  position: absolute;
+  width: 280px;
+  height: max-content;
+  max-height: 280px;
+  background-color: red;
+  top: 36px;
+  left: 50%;
+  transform: translateX(-100%);
+  z-index: 15;
+  background: $white-cl;
+  opacity: 0;
+  visibility: hidden;
+  border: 1px solid $grey-light-cl;
+  border-radius: 6px;
+  transition: 0.4s all;
+  overflow-y: scroll;
+  padding-left: 16px;
+  padding-right: 16px;
+  &:hover{
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  &::after{
+    content: "";
+    top:0;
+    left: 0;
+    width: 100%;
+    transform: translateY(-8px);
+    height: 36px;
+    background-color: transparent;
+    position: absolute;
+  }
+  &__item{
+    display: flex;
+    align-items: center;
+    padding: 16px 12px;
+    gap: 16px;
+    border-bottom: 0.5px solid $grey-light-cl;
+    img{
+        border: 0.5px solid $white-cl;
+        border-radius: 100%;
+        width: 32px;
+        height: 32px;
+    }
+  }
+}

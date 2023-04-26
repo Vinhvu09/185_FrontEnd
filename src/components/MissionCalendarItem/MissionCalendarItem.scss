@@ -1,0 +1,119 @@
+@import "../../scss/import.scss";
+.missionCalendarItem {
+  position: absolute;
+  top: 110%;
+  right: 10%;
+  border-radius: 6px;
+  box-shadow: 0px 0px 20px 5px rgba(136, 136, 136, 0.4);
+  min-width: 514px;
+  height: 386px;
+  background-color: $white-cl;
+  padding: 12px;
+  z-index: 9999;
+  cursor: auto;
+  &__head {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 8px;
+    &--left,
+    &--right {
+      border: 1px solid $grey-light-cl;
+      padding: 12px;
+      height: 44px;
+      border-radius: 6px;
+      font-size: $fz-small;
+    }
+    &--left {
+      .wrapper {
+        @include flexCenter(space-between);
+        &__left {
+          font-weight: 600;
+        }
+        &__right {
+          &--item {
+            font-weight: 600;
+            @include flexCenter;
+            .svg {
+              cursor: pointer;
+              @include flexCenter;
+              margin-left: 4px;
+            }
+          }
+        }
+      }
+    }
+    &--right {
+      @include flexCenter(space-between);
+      .container {
+        @include flexCenter;
+        .svg {
+          cursor: pointer;
+          @include flexCenter;
+          margin-left: 4px;
+        }
+        &__date {
+          font-weight: 600;
+        }
+        &__hour {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+  &__main {
+    margin-top: 8px;
+    display: grid;
+    grid-template-columns: 310px 1fr;
+    column-gap: 8px;
+
+    &--left {
+      border: 1px solid $grey-light-cl;
+      border-radius: 6px;
+      .react-datepicker {
+        @include flexCenter;
+        width: 100%;
+        height: 310px;
+        overflow: hidden;
+        border: unset;
+        box-shadow: unset;
+        .react-datepicker__navigation {
+          top: 29px;
+        }
+        .react-datepicker__current-month {
+          padding: 12px 30px;
+        }
+        .react-datepicker__month {
+          padding: 5px 24px;
+        }
+        .react-datepicker__day--in-range {
+          background-color: $blue-cl;
+        }
+        .react-datepicker__day-name,
+        .react-datepicker__day {
+          margin-top: 10px;
+          margin-right: 10px;
+        }
+      }
+    }
+    &--right {
+      border: 1px solid $grey-light-cl;
+      border-radius: 6px;
+      height: 310px;
+      padding: 6px;
+      overflow-y: auto;
+      font-size: $fz-small;
+      .timeItem {
+        transition: $t all;
+        padding: 6px 10px;
+        border-radius: 6px;
+        cursor: pointer;
+        &.active {
+          background-color: $grey-light-cl;
+        }
+        &:hover {
+          background-color: $grey-light-cl;
+        }
+      }
+    }
+  }
+}

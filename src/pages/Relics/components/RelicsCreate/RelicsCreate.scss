@@ -1,0 +1,202 @@
+@import "../../../../scss/import.scss";
+.relicsCreate {
+  height: 100%;
+  overflow-y: auto;
+  .popup {
+    &.active {
+      @include visible;
+    }
+    border-radius: 8px;
+    padding: 50px 100px;
+    @include absCenter;
+    @include hidden;
+    width: 80vw;
+    height: 90vh;
+    background-color: $white-cl;
+    z-index: 2;
+    transition: $t all;
+    overflow-y: auto;
+    .name {
+      text-align: center;
+      font-size: $fz-big;
+      font-weight: 600;
+    }
+    .close {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      cursor: pointer;
+    }
+  }
+  .overlay {
+    &.active {
+      @include visible;
+    }
+    @include hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($black-cl, 0.3);
+    z-index: 1;
+    transition: $t all;
+  }
+  padding-bottom: 200px;
+  &__head {
+    @include flexCenter(space-between);
+    .button {
+      @include flexCenter;
+      .mainButton {
+        margin-left: 8px;
+      }
+    }
+  }
+  &__main {
+    .title {
+      margin-top: 22px;
+      margin-bottom: 24px;
+      font-size: $fz-big;
+      font-weight: 600;
+    }
+    .group-status {
+      margin-top: -10px;
+      margin-bottom: 24px;
+      .label {
+        font-size: $fz-small;
+        color: $grey-cl;
+        margin-bottom: 8px;
+      }
+      .statusLoading {
+        margin-bottom: 8px;
+      }
+    }
+    .group-input {
+      margin-bottom: 24px;
+      &.error {
+        & > .label {
+          color: red;
+        }
+        // input:focus,
+        // input {
+        //   border: 1px solid red;
+        // }
+        // .errorText {
+        //   font-size: 12px;
+        //   color: red;
+        // }
+      }
+      .label {
+        font-weight: 500;
+        font-size: $fz-small;
+        margin-bottom: 8px;
+      }
+      input {
+        width: 100%;
+        outline: none;
+        padding: 12px 0 12px 16px;
+        border: 1px solid $grey-light-cl;
+        border-radius: 6px;
+        &:focus {
+          border: 1px solid $blue-cl;
+        }
+      }
+      .textEditor {
+        width: 100%;
+        .ql-toolbar {
+          border-top-left-radius: 6px;
+          border-top-right-radius: 6px;
+        }
+        .ql-container.ql-snow {
+          height: 600px;
+          border-bottom-left-radius: 6px;
+          border-bottom-right-radius: 6px;
+        }
+      }
+      .wrapper {
+        width: 100%;
+        height: 300px;
+        border: 1px solid $grey-light-cl;
+        border-radius: 6px;
+        border-style: dashed;
+        position: relative;
+        @include flexCenter;
+        .uploadFile {
+          width: 100%;
+          height: 100%;
+          opacity: 0;
+          cursor: pointer;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+    &--wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 45px;
+      .group-input {
+        .options {
+          height: 45px;
+        }
+        .wrapper {
+          position: relative;
+          .img {
+            @include absCenter;
+            width: 350px;
+            height: 200px;
+            border-radius: 6px;
+            overflow: hidden;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+        }
+      }
+      .radio-group {
+        margin-top: 12px;
+        label {
+          position: relative;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          margin-bottom: 15px;
+          .label {
+            margin-bottom: unset;
+          }
+          .radio-overlay {
+            position: relative;
+            margin-right: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            border: 2px solid $grey-cl;
+            &::after {
+              content: "";
+              display: none;
+              @include absCenter;
+              width: 6px;
+              height: 6px;
+              background: $blue-cl;
+              border-radius: 50%;
+            }
+          }
+          &.active {
+            .label {
+              color: $blue-cl;
+            }
+            .radio-overlay {
+              border: 2px solid $blue-cl;
+              &::after {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

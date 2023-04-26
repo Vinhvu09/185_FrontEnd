@@ -1,0 +1,388 @@
+@import "../scss/import.scss";
+.districtOptions {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  .img {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 12px;
+    pointer-events: none;
+  }
+  select {
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: "";
+    width: 100%;
+    height: 100%;
+    padding: 0 12px;
+    outline: none;
+    border: 1px solid $grey-light-cl;
+    font-size: $fz-small;
+    font-weight: 500;
+    border-radius: 8px;
+  }
+}
+.popupDeleteRelics {
+  .warning {
+    font-size: $fz-bigger;
+    font-weight: 700;
+    margin-top: 24px;
+    margin-bottom: 12px;
+  }
+  .warningSub {
+    font-size: $fz-small;
+  }
+}
+.btnRelicsItem {
+  width: 160px;
+  height: 40px;
+  margin-right: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  &.--delete {
+    background-color: $blue-cl;
+    color: $white-cl;
+    outline: none;
+    border: none !important;
+  }
+  &.--cancel {
+    background-color: $white-cl;
+    color: $blue-cl;
+    border: 1px solid $blue-cl;
+  }
+}
+
+.tabs {
+  display: flex;
+  align-items: center;
+  position: relative;
+  .item {
+    // @include flexCenter;
+    cursor: pointer;
+    padding: 16px 24px;
+    margin-right: 4px;
+    background-color: #fafafa;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-top: 1px solid #e5e5e5;
+    border-left: 1px solid #e5e5e5;
+    border-right: 1px solid #e5e5e5;
+    position: relative;
+    transition: $t all;
+    height: 60px;
+    max-width: 230px;
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 30px;
+      top: 100%;
+      left: 0;
+      background-color: $white-cl;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 0;
+    }
+    &.active {
+      background-color: $white-cl;
+      p {
+        color: $blue-cl;
+        text-shadow: 0 0 1px $blue-cl;
+      }
+      &::after {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    p {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transition: $t all;
+      text-align: center;
+      @include flexCenter;
+    }
+  }
+  .line {
+    position: absolute;
+    left: 24px;
+    bottom: 0;
+    height: 1px;
+    background-color: $blue-cl;
+    transition: $t all;
+  }
+}
+
+.swal2-popup.swalHeightCreateFile {
+  height: 230px !important;
+  width: 420px !important;
+}
+
+.react-datepicker {
+  position: relative;
+  border: none;
+  box-shadow: 0px 0px 20px 5px rgba(136, 136, 136, 0.4);
+  border-radius: 6px;
+  .react-datepicker__month-container {
+    .react-datepicker__current-month {
+      text-align: left;
+      padding: 12px 32px;
+    }
+    .react-datepicker__header {
+      background-color: white;
+      border: none;
+      .react-datepicker__day-name {
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+  }
+  .react-datepicker__navigation {
+    &:hover *::before {
+      border-color: $blue-cl;
+    }
+  }
+  .react-datepicker__navigation--previous,
+  .react-datepicker__navigation--next {
+    position: absolute;
+    top: 16px;
+    right: 24px;
+    width: 24px;
+    height: 24px;
+    background: $white-cl;
+    border-radius: 20px;
+    box-shadow: 0px 4px 18px rgba(176, 176, 176, 0.25);
+    .react-datepicker__navigation-icon {
+      &::before {
+        border-width: 1.5px 1.5px 0 0;
+        border-color: $blue-cl;
+      }
+    }
+  }
+  .react-datepicker__navigation--previous {
+    left: calc(100% - 80px);
+  }
+  .react-datepicker__month {
+    padding: 16px 24px;
+    margin: 0;
+  }
+  .react-datepicker__day {
+    &:hover {
+      background-color: $blue-cl;
+      color: $white-cl;
+    }
+    &--selected {
+      background-color: $blue-cl;
+    }
+  }
+  .react-datepicker__day--keyboard-selected {
+    background-color: transparent;
+    color: $black-cl;
+  }
+}
+
+input,
+textarea {
+  font-family: "Montserrat", sans-serif;
+}
+.missionPopup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background-color: rgba($grey-cl, 0.5);
+  @include flexCenter;
+}
+
+.timeWrapper {
+  &__time {
+    display: flex;
+    align-items: center;
+    font-size: $fz-small;
+    &--wrapper {
+      .date {
+        color: $grey-cl;
+        margin-bottom: 4px;
+      }
+      .time {
+        font-weight: 500;
+        &.--end {
+          margin-right: 4px;
+          text-decoration: underline;
+        }
+      }
+      div {
+        cursor: pointer;
+        display: flex;
+      }
+    }
+    .arrow {
+      margin: 0 22px;
+    }
+  }
+  &__img {
+    cursor: pointer;
+    @include flexCenter;
+    width: 32px;
+    height: 32px;
+    border: 1px solid $black-cl;
+    border-radius: 50%;
+    border-style: dashed;
+    position: relative;
+    .missionCalendarItem {
+      left: 10px;
+    }
+  }
+}
+
+.notificationGeneral {
+  font-size: 14px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  &__list {
+    flex: 1;
+  }
+  &.--bell {
+    padding: 24px;
+    .notificationGeneral__tab {
+      margin-bottom: 16px;
+    }
+  }
+  &.--page {
+    padding: 0 24px 24px;
+    .notificationGeneral__head {
+      p {
+        color: $blue-cl;
+      }
+    }
+    .notificationGeneral__tab {
+      margin-bottom: 24px;
+      .right {
+        .filterGroup {
+          cursor: pointer;
+          padding: 10px;
+          margin-left: 24px;
+          display: flex;
+          align-items: center;
+          background: #ffffff;
+          box-shadow: 0px 0px 10px rgba(136, 136, 136, 0.1);
+          border-radius: 6px;
+          p {
+            font-weight: 600;
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+    .notificationGeneral__list {
+      border-radius: 12px;
+      box-shadow: 0px 0px 10px rgba(136, 136, 136, 0.1);
+    }
+  }
+  &__head {
+    @include flexCenter(space-between);
+    margin-bottom: 16px;
+    p {
+      font-weight: 600;
+      font-size: 20px;
+    }
+    a {
+      font-weight: 600;
+      font-size: 14px;
+      color: #1a48e9;
+    }
+  }
+  &__tab {
+    @include flexCenter(space-between);
+    .left {
+      display: flex;
+      align-items: center;
+      .tabItem {
+        font-weight: 600;
+        padding: 8px 12px;
+        margin-right: 20px;
+        cursor: pointer;
+        &.active {
+          color: $blue-cl;
+          background: rgba(26, 72, 233, 0.2);
+          border-radius: 6px;
+        }
+      }
+    }
+    .right {
+      display: flex;
+      align-items: center;
+      .readGroup {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        p {
+          color: $blue-cl;
+          font-weight: 500;
+          margin-left: 6px;
+        }
+        &.active {
+          p {
+            color: #e0e0e0;
+          }
+          svg {
+            * {
+              fill: #e0e0e0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.emptyBell {
+  height: 100%;
+  @include flexCenter;
+  flex-direction: column;
+  .img {
+    width: 80px;
+    height: 80px;
+    background-color: rgba(26, 154, 255, 0.15);
+    border-radius: 50%;
+    @include flexCenter;
+    margin-bottom: 24px;
+    svg {
+      width: 32px;
+      height: 32px;
+      cursor: unset !important ;
+    }
+  }
+  .text {
+    font-weight: 600;
+    font-size: 16px;
+  }
+}
+
+#modal-wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($black-cl, 0.5);
+  @include flexCenter;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: rgba(0, 0, 0, 0);
+  opacity: 1;
+  background: url("../assets/svg/missionCalendar.svg") no-repeat;
+  border-width: thin;
+}

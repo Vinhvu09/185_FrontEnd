@@ -1,0 +1,35 @@
+@import "../../scss/import.scss";
+.peopleList {
+  width: 120px;
+  height: 32px;
+  position: relative;
+  &__wrapper {
+    @include flexCenter;
+    height: 100%;
+    width: 100%;
+    .img {
+      cursor: pointer;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 9;
+    }
+    .item {
+      flex-shrink: 0;
+      position: absolute;
+      right: 0;
+    }
+    .item,
+    .img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@import "../../scss/import.scss";
+.fileItemV2 {
+  padding: 33px 32px 24px 32px;
+  background-color: rgba(224, 224, 224, 0.3);
+  border-radius: 6px;
+  &__box {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__bottom {
+    padding-top: 50px;
+
+    &-title {
+      color: $black-cl;
+      font-weight: 600;
+      font-size: $fz-normal;
+      line-height: 24px;
+    }
+
+    &-text {
+      color: #888888;
+      padding-top: 32px;
+      font-size: 12px;
+    }
+  }
+}

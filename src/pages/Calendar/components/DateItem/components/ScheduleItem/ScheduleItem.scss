@@ -1,0 +1,201 @@
+@import "../../../../../../scss/import.scss";
+.scheduleItem {
+  position: absolute;
+  width: calc(100% - 144px);
+  right: 24px;
+  border-radius: 8px;
+  padding: 12px 24px 0px;
+  cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 60%;
+    height: 100%;
+    pointer-events: none;
+
+    &--time {
+      font-weight: 500;
+      font-size: $fz-small;
+      color: $black-light-cl;
+    }
+    &--title {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-weight: 600;
+      font-size: $fz-normal;
+      color: $black-light-cl;
+    }
+    &--desc {
+
+        p{
+      font-weight: 400;
+      font-size: $fz-small;
+      color: $grey-cl;
+      line-height: 20px;
+      text-align: justify;
+      word-break: break-all;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    }
+  }
+  &__right{
+    width: 30%;
+    display: flex;
+    gap: 12px;
+    flex-flow: row-reverse;
+    align-items: center;
+    height: max-content;
+    margin-top: 16px;
+    svg{
+      cursor: pointer;
+    }
+    &--user{
+      display: flex;
+      position: relative;
+      height: 32px;
+      width: 116px;
+      justify-content: center;
+      .moreUser{
+        position: absolute;
+        top:50%;
+        transform: translateY(-50%);
+        left: 0;
+        path{
+          pointer-events: none;
+        }
+        &:hover ~ .popUpListUser{
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+      .image-user{
+        position: absolute;
+
+        top:50%;
+        transform: translateY(-50%);
+        width: 32px;
+        height: 32px;
+        border: 0.5px solid #FFFFFF;
+        border-radius: 100%;
+
+        // img{
+        //   width: 31px;
+        //   height: 31px;
+        //   border-radius: 100%;
+        // border: 0.5px solid #FFFFFF;
+
+        // }
+      }
+
+      .addUserSVGSchedule{
+        position: absolute;
+        top:50%;
+        transform: translateY(-50%);
+        // left: 88px;
+        right: 0;
+        z-index: 5;
+        path{
+          pointer-events: none;
+        }
+      }
+    }
+     }
+}
+
+.scheduleItemV2{
+  position: absolute;
+  width: calc(100% - 144px);
+  right: 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  padding: 4px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__left {
+    gap: 8px;
+    width: 60%;
+    height: 100%;
+    display: flex;
+      flex-direction: column;
+    justify-content: center;
+    pointer-events: none;
+    &--time {
+      font-weight: 500;
+      font-size: $fz-small;
+      color: $black-light-cl;
+    }
+    &--title {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-weight: 600;
+      font-size: $fz-normal;
+      color: $black-light-cl;
+    }
+
+  }
+  &__right{
+    width: 30%;
+    display: flex;
+    gap: 12px;
+    flex-flow: row-reverse;
+    align-items: center;
+    height: max-content;
+    svg{
+      cursor: pointer;
+    }
+    &--user{
+      display: flex;
+      position: relative;
+      height: 32px;
+      width: 116px;
+      justify-content: center;
+      .moreUser{
+        position: absolute;
+        top:50%;
+        transform: translateY(-50%);
+        left: 0;
+        path{
+          pointer-events: none;
+        }
+        &:hover ~ .popUpListUser{
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+      .image-user{
+        position: absolute;
+
+        top:50%;
+        transform: translateY(-50%);
+        width: 32px;
+        height: 32px;
+        border: 0.5px solid #FFFFFF;
+        border-radius: 100%;
+
+       
+      }
+
+      .addUserSVGSchedule{
+        position: absolute;
+        top:50%;
+        transform: translateY(-50%);
+        right: 0;
+        z-index: 5;
+        path{
+          pointer-events: none;
+        }
+      }
+    }
+     }
+}

@@ -1,0 +1,47 @@
+@import '../../../../../../scss/import.scss';
+.columnDateItem {
+  width: calc((100% - 20px)/ 7);
+  pointer-events: none;
+  height: 80px;
+  &__day {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 18px;
+    font-size: $fz-normal;
+    color: $black-cl;
+    height: 80px;
+    &--dayInWeek {
+      font-weight: 600;
+    }
+    &--dayInMonth {
+      font-weight: 500;
+    }
+    &--border {
+        position: absolute;
+        right: 0;
+        top:50%;
+        transform: translateY(-50%);
+        border-radius: 6px;
+      width: 0;
+      height: 24px;
+      border: 2px solid #e0e0e0;
+    }
+  }
+  &__data{
+    border-right: 1px solid $grey-light-cl;
+    height: calc(100% - 80px);
+
+  }
+}
+
+.displayNone{
+    display: none;
+}
+
+.borderNone{
+    border:0px !important;
+}

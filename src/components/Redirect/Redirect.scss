@@ -1,0 +1,26 @@
+@import "../../scss/import.scss";
+.redirect {
+  display: flex;
+  background-color: rgba(224, 224, 224, 0.4);;
+  border-radius: 4px;
+  padding: 8px 16px;
+  &__wrapper {
+    a,
+    .link {
+      font-size: $fz-small;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      img {
+        margin: 0 15px;
+      }
+      &.theLast {
+        color: $blue-cl;
+      }
+      .theLast {
+        color: $blue-cl;
+      }
+    }
+  }
+}

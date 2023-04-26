@@ -1,0 +1,55 @@
+@import "../../../../../../src/scss/import.scss";
+.inputStaff {
+  position: relative;
+  .inputStaff__label {
+    font-weight: 500;
+    font-size: $fz-small;
+    color: #333333;
+  }
+  input {
+    margin-top: 8px;
+    width: 100%;
+    font-weight: 500;
+    font-size: $fz-small;
+    color: #333333;
+    padding: 10px 12px;
+    background: $white-cl;
+    border: 1px solid #d0d0d0;
+    border-radius: 6px;
+    font-family: "Montserrat", sans-serif;
+
+    &:focus-visible {
+      outline: none;
+    }
+    &::placeholder {
+      color: $grey-cl;
+      font-weight: 400;
+      font-size: $fz-small;
+      font-family: "Montserrat", sans-serif;
+    }
+  }
+  .inputStaff__error {
+    color: red;
+    font-size: 12px;
+    margin-top: 6px;
+    display: block;
+    height: 20px;
+  }
+  .inputStaff__currentMoney {
+    position: absolute;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    background: rgba(217, 217, 217, 0.4);
+    top: 28px;
+    left: 0;
+    width: 40px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: $fz-small;
+    color: #888888;
+    padding: 10px 24px;
+  }
+}

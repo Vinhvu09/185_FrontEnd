@@ -1,0 +1,99 @@
+@import "../../../../../../../scss/import.scss";
+
+.memberInputSchedule {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+  position: relative;
+  &__input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+    background: $white-cl;
+    border: 1px solid $grey-light-cl;
+    border-radius: 6px;
+    &--text {
+      font-size: 14px;
+      color: $black-light-cl;
+      pointer-events: none;
+    }
+  }
+  &__listImageMember {
+    display: flex;
+    padding-left: 16px;
+    position: relative;
+    height: 32px;
+    &--image {
+      position: absolute;
+      border: 0.5px solid $white-cl;
+      border-radius: 100%;
+      img {
+        width: 32px;
+        height: 32px;
+        border-radius: 100%;
+      }
+    }
+  }
+  &__inputMember {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 16px;
+    opacity: 0;
+    visibility: 0;
+    overflow-y: auto;
+    height: 300px;
+    pointer-events: none;
+    border: 1px solid $grey-light-cl;
+    background-color: $white-cl;
+    position: absolute;
+    width: 100%;
+    transform: translateY(calc(-100% - 8px));
+    z-index: 10000;
+    border-radius: 6px;
+    &--userItemCheck {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 0.5px solid #e0e0e0;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      .left {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        pointer-events: none;
+
+        img {
+          width: 32px;
+          height: 32px;
+          border-radius: 100%;
+          pointer-events: none;
+        }
+        .name {
+          font-size: 14px;
+          color: $black-light-cl;
+          pointer-events: none;
+        }
+      }
+      input[type="checkbox"] {
+        accent-color: $blue-cl;
+      }
+      input {
+        width: 20px;
+        height: 20px;
+        border-radius: 2px;
+      }
+    }
+    &--userItemCheck:first-child {
+      border-top: 0px !important;
+    }
+  }
+}
+
+.activeInputMember {
+  opacity: 1;
+  visibility: 1;
+  pointer-events: all;
+}

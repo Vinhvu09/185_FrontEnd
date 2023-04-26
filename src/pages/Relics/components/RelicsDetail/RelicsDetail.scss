@@ -1,0 +1,86 @@
+@import "../../../../scss/import.scss";
+@import "~quill/dist/quill.core.css";
+@import "~quill/dist/quill.bubble.css";
+@import "~quill/dist/quill.snow.css";
+.relicsDetail {
+  padding-bottom: 40px;
+  .head {
+    @include flexCenter(space-between);
+  }
+  .info {
+    margin: 30px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .item {
+      margin-bottom: 16px;
+      span:nth-child(1) {
+        display: inline-block;
+        font-weight: 600;
+        margin-right: 8px;
+      }
+    }
+  }
+  .main {
+    .title {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .content {
+      padding: 30px 24px 0 24px;
+      border: 1px solid $grey-light-cl;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+      &__technicals,
+      &__maps {
+        width: 100%;
+        height: 100%;
+        .img {
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          border-radius: 4px;
+          margin-bottom: 24px;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+  .relative {
+    .title {
+      margin-top: 32px;
+      margin-bottom: 16px;
+    }
+    .item {
+      cursor: pointer;
+      border-radius: 10px;
+      overflow: hidden;
+      .img {
+        height: 300px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .textWrap {
+        padding: 24px;
+        background: $blue-cl;
+        color: $white-cl;
+        .name {
+          @include overText(1);
+          font-weight: 600;
+          font-size: $fz-big;
+          margin-bottom: 8px;
+        }
+        .address {
+          line-height: 24px;
+          @include overText(1);
+        }
+      }
+    }
+  }
+}

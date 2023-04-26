@@ -1,0 +1,100 @@
+@import "../../../../../../scss/import.scss";
+
+  .dateItem__editSchedule {
+    transition: 0.4s all;
+    z-index: 10000;
+    position: absolute;
+    width: 30%;
+    opacity: 0;
+    visibility: hidden;
+    right: 0;
+    height: calc(100% - 113px);
+    top: 116px;
+    background-color: #fafafa;
+    border-left: 0.5px solid $grey-light-cl;
+    padding: 24px;
+    overflow-y: scroll;
+    
+    &--form {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      .meetingTime {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        &__title {
+          font-weight: 500;
+          font-size: $fz-normal;
+          color: $black-cl;
+        }
+        &__time {
+          display: flex;
+          gap: 24px;
+          align-items: center;
+          &--left {
+            font-size: $fz-small;
+            color: $grey-cl;
+            display: block;
+            width: 24px;
+          }
+          &--right {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            .inputEditMeetingTime {
+              width: 28px;
+              height: 28px;
+              border: 1px solid $grey-light-cl;
+              border-radius: 4px;
+              text-align: center;
+  
+              font-weight: 500;
+              font-size: $fz-small;
+              color: $black-cl;
+              &:focus-visible {
+                outline: 0px !important   ;
+                border: 1px solid $blue-cl;
+                box-shadow: 0px 0px 4px #6dcef5 !important;
+              }
+            }
+            span {
+              font-size: $fz-small;
+              color: $grey-cl;
+            }
+          }
+        }
+      }
+      .groupButton {
+        display: flex;
+        justify-content: space-between;
+        .groupButton__cancel {
+          padding: 8px 48px;
+          width: 130px;
+          height: 40px;
+          background: #ffffff;
+          border: 1px solid $blue-cl;
+          box-shadow: 0px 2px 6px rgba(28, 73, 143, 0.08);
+          border-radius: 6px;
+          font-weight: 600;
+          font-size: $fz-normal;
+          text-align: center;
+          color: $blue-cl;
+          cursor: pointer;
+        }
+        .groupButton__save {
+          padding: 8px 48px;
+          background: $blue-cl;
+          border: 1px solid $blue-cl;
+          box-shadow: 0px 2px 6px rgba(28, 73, 143, 0.08);
+          border-radius: 6px;
+          font-weight: 600;
+          font-size: 16px;
+          text-align: center;
+          color: #ffffff;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+

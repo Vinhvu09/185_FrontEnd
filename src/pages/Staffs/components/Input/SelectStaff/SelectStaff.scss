@@ -1,0 +1,81 @@
+@import "../../../../../../src/scss/import.scss";
+.selectStaff {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  &__label {
+    font-weight: 500;
+    font-size: 14px;
+    color: #333333;
+  }
+  &__select {
+    position: relative;
+    width: 100%;
+    font-weight: 500;
+    font-size: $fz-small;
+    height: 38px;
+    color: #333333;
+    padding: 10px 12px;
+    background: $white-cl;
+    border: 1px solid #d0d0d0;
+    border-radius: 6px;
+    margin-top: 8px;
+    &--placeHolder {
+      color: $grey-cl;
+      font-weight: 400;
+      font-size: $fz-small;
+      pointer-events: none;
+    }
+    &--text {
+      color: #333333;
+      font-weight: 500;
+      font-size: $fz-small;
+    }
+    &--dropdownIcon {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+    &--options {
+      position: absolute;
+      z-index: 5;
+      left: 0;
+      bottom: 0;
+      transform: translateY(calc(100% + 8px));
+      height: 220px;
+      width: 100%;
+      border-radius: 6px;
+      background: $white-cl;
+      border: 1px solid #d0d0d0;
+      padding: 10px 12px;
+      overflow-y: auto;
+      display: none;
+      flex-direction: column;
+      .option {
+        padding: 16px 14px;
+        border-bottom: 0.5px solid $grey-light-cl;
+        &:first-child {
+          border-top: 0.5px solid $grey-light-cl;
+        }
+        &:hover {
+          background-color: $grey-light-cl;
+        }
+      }
+    
+    }
+ 
+    .displayFlex{
+      display: flex !important;
+    }
+
+  }
+  &__error{
+    color: red;
+    font-size: 12px;
+    margin-top: 6px;
+    display: block;
+    height: 20px;
+  }
+}

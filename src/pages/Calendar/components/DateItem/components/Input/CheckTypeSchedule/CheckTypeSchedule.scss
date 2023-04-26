@@ -1,0 +1,83 @@
+@import "../../../../../../../scss/import.scss";
+.checkTypeSchedule {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  &__title {
+    font-weight: 500;
+    font-size: $fz-normal;
+    color: $black-cl;
+  }
+  &__list {
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+    &--checkbox {
+      position: relative;
+      display: flex;
+      padding-left: 30px;
+      align-items: center;
+      height: 20px;
+      input {
+        position: absolute; 
+        opacity: 0;
+        cursor: pointer;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        &:checked ~ #checkmark1 {
+          background-color: #3cd5a3;
+        }
+        &:checked ~ #checkmark2 {
+            background-color: #1A9AFF;
+          }
+          &:checked ~ #checkmark3 {
+            background-color: $grey-light-cl;
+          }
+        &:checked ~#checkmark1::after,
+        &:checked~#checkmark2::after,
+        &:checked~#checkmark3::after{
+            display: block;
+        }
+      }
+      #checkmark1,#checkmark2,#checkmark3 {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 2px;
+        transform: translateY(-50%);
+        &::after {
+          content: "";
+          display: none;
+          transform: translate(50%,50%);
+          width: 5px;
+          height: 10px;
+          border: solid white;
+          border-width: 0 3px 3px 0;
+          -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+        }
+
+      }
+      #checkmark1{
+        background: rgba(60, 213, 163, 0.15);
+        border: 1.5px solid #3cd5a3;
+      }
+      #checkmark2{
+        background: rgba(26, 154, 255, 0.15);
+        border: 1.5px solid #1A9AFF;
+      }
+      #checkmark3{
+        background: rgba(224, 224, 224, 0.3);
+        border: 1.5px solid $grey-light-cl;
+      }
+    }
+  }
+}

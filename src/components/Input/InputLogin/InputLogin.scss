@@ -1,0 +1,33 @@
+@import "../../../scss/import.scss";
+.inputLoginComponent {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  &__title {
+    font-weight: 500;
+    font-size: $fz-small;
+    color: #333333;
+    
+    
+  }
+  input {
+    padding: 10px 12px;
+    background: $white-cl;
+    border: 1px solid #D0D0D0;
+    border-radius: 6px;
+
+  
+    &:focus-visible{
+        outline: 0px !important   ;
+        border: 1px solid $blue-cl;
+        box-shadow: 0px 0px 4px #6DCEF5 !important;
+    }
+   
+  }
+  &__error{
+ 
+    color: $red-cl;
+    font-size:12px;
+    
+  }
+}

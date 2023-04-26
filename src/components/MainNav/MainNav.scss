@@ -1,0 +1,127 @@
+@import "../../scss/import.scss";
+.mainNav {
+  min-height: calc(100% - 100px);
+  font-size: $fz-small;
+  border-right: 1px solid $grey-light-cl;
+  border-left: 1px solid $grey-light-cl;
+
+  padding-top: 32px;
+  &__wrapper,
+  &__wrapper--noneDropdown {
+    font-weight: 500;
+    &.active {
+      .main {
+        background-color: rgba($blue-cl, 0.1);
+        .left {
+          p {
+            color: $blue-cl;
+          }
+        }
+        .right {
+          svg {
+            * {
+              fill: $blue-cl;
+            }
+          }
+        }
+        .circleMainWrapper {
+          display: block;
+        }
+      }
+    }
+    &.show {
+      .main {
+        .right {
+          svg {
+            @include transform(rotate(0));
+          }
+        }
+      }
+      .options {
+        display: block;
+      }
+    }
+    .main {
+      @include flexCenter(space-between);
+      padding: 12px;
+      margin-bottom: 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      .left,
+      .right {
+        pointer-events: none;
+      }
+      .left {
+        display: flex;
+        align-items: center;
+        p {
+          margin-left: 10px;
+        }
+      }
+      .right {
+        @include flexCenter;
+        svg {
+          @include transform(rotate(180deg));
+        }
+      }
+    }
+    .options {
+      display: none;
+      .item {
+        padding: 0 12px 24px 46px;
+        @include flexCenter(space-between);
+        cursor: pointer;
+        &.active {
+          p {
+            color: $blue-cl;
+          }
+          .circle {
+            display: block;
+          }
+        }
+        .circle {
+          display: none;
+          background-color: $blue-cl;
+          height: 8px;
+          width: 8px;
+          border-radius: 50%;
+        }
+      }
+      .dropdown {
+        &.show {
+          .wrapper {
+            img {
+              @include transform(rotate(0));
+            }
+          }
+          .item {
+            display: flex;
+          }
+        }
+        .wrapper {
+          @include flexCenter(space-between);
+          padding: 0 12px 24px 46px;
+          cursor: pointer;
+          img {
+            @include transform(rotate(-90deg));
+          }
+          p,
+          img {
+            pointer-events: none;
+          }
+        }
+        .item {
+          display: none;
+          padding-left: 70px;
+        }
+      }
+    }
+    .circleMainWrapper {
+      display: none;
+      background-color: $blue-cl;
+      height: 8px;
+      width: 8px;
+      border-radius: 50%;
+    }
+  }
+}

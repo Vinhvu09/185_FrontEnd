@@ -1,0 +1,10 @@
+@import "../../scss/import.scss";
+.documentary {
+  height: 100%;
+  .container-fluid {
+    height: calc(100% - 30px);
+  }
+  &__main {
+    height: 100%;
+  }
+}

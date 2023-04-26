@@ -1,0 +1,20 @@
+.notificationDetail {
+  padding-left: 24px;
+  &__group {
+    margin-bottom: 50px;
+    &--title {
+      font-weight: 600;
+    }
+    &--text {
+      margin-top: 20px;
+      font-size: 14px;
+      padding-left: 20px;
+      p {
+        margin-bottom: 16px;
+        span {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@import "../../../../scss/import.scss";
+.word-file-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 8px;
+  border-radius: 6px;
+  &:hover {
+    background-color: #f1f1f1;
+  }
+}

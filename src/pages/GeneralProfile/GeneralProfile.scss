@@ -1,0 +1,31 @@
+@import "scss/import.scss";
+
+.general {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 24px;
+
+  &__title {
+    font-size: $fz-big;
+    font-weight: 600;
+    line-height: 28px;
+    color: $black-cl;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 6px;
+    background-color: $blue-cl;
+    transition: all 0.2s linear;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

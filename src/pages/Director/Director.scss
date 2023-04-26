@@ -1,0 +1,125 @@
+@import "../../scss/import.scss";
+.director {
+  &__main {
+    &--table {
+      .headTable {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 80px;
+        .button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .mainButton {
+            margin-left: 8px;
+          }
+        }
+      }
+      .wrapper-table {
+        // border: 1px solid $grey-light-cl;
+        // padding: 16px;
+        // border-radius: 12px;
+        // border-spacing: 0;
+        border: 1px solid $grey-light-cl;
+        border-radius: 12px;
+        height: 440px;
+        overflow-y: auto;
+        margin-top: 32px;
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          border-spacing: 0;
+          overflow: auto;
+          padding: 16px;
+          border-radius: 12px;
+          thead {
+            background: rgba($blue-cl, 0.1);
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+          }
+
+          th {
+            padding: 14px 16px;
+            div {
+              font-weight: 600;
+              font-size: $fz-normal;
+              line-height: 24px;
+              color: $blue-cl;
+              width: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              gap: 10px;
+            }
+          }
+          td {
+            padding: 12px 16px;
+            position: -webkit-sticky;
+            position: sticky;
+            left: 0;
+            div {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              span {
+                max-width: 90%;
+                overflow: hidden;
+
+                display: block;
+                text-align: left;
+              }
+            }
+          }
+          tr:not(:last-child) {
+            border-bottom: 0.5px solid $grey-light-cl;
+          }
+        }
+        .bottom-table {
+          border-top: 0.5px solid $grey-light-cl;
+          padding: 16px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          &__displayInput {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            width: 40%;
+            .text {
+              font-weight: 400;
+              font-size: $fz-small;
+              line-height: 17px;
+              color: #7d7f82;
+            }
+            .inputDisplay {
+              width: 60px;
+              padding: 2px 8px;
+              &:focus-visible {
+                outline: none;
+              }
+            }
+          }
+          .pagination {
+            &__item {
+              font-weight: 400;
+              font-size: $fz-normal;
+              line-height: 20px;
+              color: $black-cl;
+              &:hover,
+              &-active {
+                background-color: rgba($blue-cl, 0.1);
+                font-weight: 600;
+                font-size: $fz-normal;
+                line-height: 20px;
+                color: $black-cl;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@import "../../../../../../scss/import.scss";
+.rowTimeRange {
+  height: 150px;
+  width: 100%;
+  display: flex;
+
+  &__left {
+    width: 120px;
+    height: 100%;
+    padding: 12px 24px;
+    font-weight: 500;
+    font-size: $fz-normal;
+    color: $black-light-cl;
+  }
+  &__right {
+    width: calc(100% - 120px);
+    border-bottom: 1px solid $grey-light-cl;
+  }
+}

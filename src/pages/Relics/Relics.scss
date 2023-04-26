@@ -1,0 +1,97 @@
+@import "../../scss/import.scss";
+@import "../../scss/import.scss";
+.relics {
+  height: 100%;
+  overflow-y: auto;
+  .container-fluid {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  &__head {
+    @include flexCenter(space-between);
+  }
+  &__filter {
+    margin-top: 32px;
+    margin-bottom: 24px;
+    .title {
+      margin-bottom: 10px;
+      font-size: $fz-small;
+      font-weight: 500;
+    }
+    .filter {
+      @include flexCenter(space-between);
+      gap: 70px;
+      .left {
+        width: 370px;
+        height: 40px;
+      }
+      .right {
+        @include flexCenter(space-between);
+        label {
+          @include flexCenter;
+          margin-left: 14px;
+          position: relative;
+          cursor: pointer;
+          &.active {
+            .label {
+              color: $black-cl;
+            }
+            .checkStyle {
+              background-color: $blue-cl;
+              img {
+                display: block;
+              }
+            }
+          }
+          .checkStyle {
+            width: 24px;
+            height: 24px;
+            border-radius: 8px;
+            border: 1px solid #cfd1d5;
+            left: 4px;
+            position: relative;
+            margin-right: 15px;
+            img {
+              display: none;
+              @include absCenter;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              user-select: none;
+            }
+          }
+          .label {
+            font-weight: 500;
+            color: $grey-cl;
+            font-size: $fz-small;
+          }
+        }
+      }
+    }
+  }
+  &__list {
+    flex: 1;
+    position: relative;
+    margin-top: 25px;
+    &--notfound {
+      max-width: 280px;
+      @include absCenter;
+      text-align: center;
+      img {
+        width: 100%;
+      }
+      .text {
+        .main {
+          margin: 10px 0 15px;
+          font-size: 24px;
+          font-weight: 600;
+        }
+        .sub {
+          font-size: 20px;
+          font-weight: 500;
+          color: #434547;
+        }
+      }
+    }
+  }
+}

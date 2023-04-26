@@ -1,0 +1,63 @@
+@import "../../scss/import.scss";
+.statusLoading {
+  width: 100%;
+  height: 48px;
+  padding: 8px 20px;
+  border-radius: 6px;
+  border: 1px solid $grey-light-cl;
+  @include flexCenter(space-between);
+  .left,
+  .center,
+  .right {
+    height: 100%;
+  }
+  .left {
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .center {
+    width: 90%;
+    @include flexCenter(center);
+    flex-direction: column;
+    font-size: $fz-small;
+    padding: 0 10px;
+    .head {
+      @include flexCenter(space-between);
+      width: 100%;
+      &.true {
+      }
+      .name {
+        max-width: 350px;
+        font-weight: 500;
+        overflow: hidden;
+      }
+      .percent {
+        color: $grey-cl;
+      }
+    }
+    .line {
+      width: 100%;
+      height: 4px;
+      background-color: rgba($blue-cl, 0.1);
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+      margin-top: 5px;
+      .lineOverlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 4px;
+        background-color: $blue-cl;
+        border-radius: 8px;
+      }
+    }
+  }
+  .right {
+    cursor: pointer;
+    @include flexCenter;
+  }
+}

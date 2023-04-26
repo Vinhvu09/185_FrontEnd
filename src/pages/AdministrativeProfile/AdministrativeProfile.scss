@@ -1,0 +1,30 @@
+@import "../../scss/import.scss";
+.administrativeProfile {
+  height: 100%;
+  padding-bottom: 24px;
+  .container-fluid {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  &__search {
+    margin: 24px 0;
+    @include flexCenter(space-between);
+    .mainButton {
+      width: 220px;
+    }
+  }
+  &__main {
+    border-radius: 6px;
+    border: 1px solid $grey-light-cl;
+    flex: 1;
+    & > .wrapper {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 72px;
+      row-gap: 30px;
+      border-radius: 12px;
+      padding: 32px 24px;
+    }
+  }
+}

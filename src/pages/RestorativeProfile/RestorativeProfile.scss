@@ -1,0 +1,36 @@
+@import "../../scss/import.scss";
+.restorativeProfile {
+  padding-bottom: 24px;
+  height: 100%;
+  .container-fluid {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  &__search {
+    margin: 24px 0;
+    @include flexCenter(space-between);
+    .mainButton {
+      width: 220px;
+    }
+  }
+  &__main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    .main {
+      flex: 1;
+      padding: 30px 24px 0 24px;
+      border: 1px solid $grey-light-cl;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+      padding: 32px 24px;
+      & > .wrapper {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        -moz-gap: 16px;
+        gap: 16px;
+      }
+    }
+  }
+}

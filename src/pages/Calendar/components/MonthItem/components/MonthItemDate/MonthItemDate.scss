@@ -1,0 +1,27 @@
+@import "../../../../../../scss/import.scss";
+.monthItemDate {
+  position: relative;
+  width: calc(100% / 7);
+  height: 160px;
+  border: 0.8px solid $grey-light-cl;
+  background-color: $white-cl;
+  font-weight: 500;
+  font-size: 24px;
+  color: $black-cl;
+  display: flex;
+  flex-direction: column-reverse;
+  
+  &__date {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+  }
+  &__data{
+    height: 120px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap:8px;
+    overflow-y:auto;
+  }
+}

@@ -1,0 +1,50 @@
+@import "../../scss/import.scss";
+.options {
+  width: 100%;
+  height: 100%;
+  font-weight: 500;
+  font-size: $fz-small;
+  position: relative;
+
+  .main {
+    cursor: pointer;
+    padding: 0 12px;
+    @include flexCenter(space-between);
+    border: 1px solid $grey-light-cl;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+  }
+  .sub {
+    &.show {
+      display: block;
+    }
+    background-color: $white-cl;
+    display: none;
+    width: 100%;
+    height: 225px;
+    overflow-y: scroll;
+    border: 1px solid $grey-light-cl;
+    border-radius: 8px;
+    position: absolute;
+    top: 100%;
+    @include select-none;
+    z-index: 1;
+    ul {
+      padding: unset;
+      margin: unset;
+      li {
+        border-bottom: 1px solid $grey-light-cl;
+        cursor: pointer;
+        padding: 12px;
+        display: block;
+        width: 100%;
+        height: 100%;
+        transition: 0.3s all linear;
+        &:hover {
+          background-color: rgba($blue-cl, 0.1);
+        }
+      }
+    }
+  }
+}

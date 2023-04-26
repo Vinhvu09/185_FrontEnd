@@ -1,0 +1,23 @@
+.addBoxBorder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 300px;
+  height: 135px;
+  border: 1px solid;
+  cursor: pointer;
+  border: 1px solid #e0e0e0;
+  border-style: dashed;
+  border-radius: 8px;
+  svg {
+    width: 26px;
+    height: 26px;
+  }
+  p {
+    color: #bdbdbd;
+    font-weight: 500;
+    font-size: 14px;
+    margin-top: 15px;
+  }
+}

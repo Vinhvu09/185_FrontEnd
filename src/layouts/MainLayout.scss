@@ -1,0 +1,13 @@
+@import "../scss/import.scss";
+.outlet {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  &__item {
+    max-width: 1440px;
+    padding: 32px 24px;
+    width: calc(100vw - 320px);
+    max-width: calc(1440px - 320px);
+    height: calc(100vh - 100px);
+    overflow-y: auto;
+  }
+}

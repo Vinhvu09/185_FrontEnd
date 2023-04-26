@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
+@import "./import.scss";
+* {
+  margin: 0;
+  padding: 0;
+}
+input,
+label {
+  display: block;
+}
+ol,
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: $black-cl;
+}
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+  margin: auto;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: $fz-normal;
+  overflow-y: hidden;
+}
+.main-wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+// .textEditor > .ql-toolbar:first-child {
+//   display: none !important;
+// }
+// .container {
+//   width: 100%;
+//   padding-right: 15px;
+//   padding-left: 15px;
+//   margin-right: auto;
+//   margin-left: auto;
+// }
+
+.container-fluid {
+  width: 100%;
+  padding-right: 24px;
+  padding-left: 24px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $grey-light-cl;
+  border-radius: 6px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba($grey-light-cl, 0.8);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+// @media (min-width: 576px) {
+//   .container {
+//     max-width: 540px;
+//   }
+// }
+
+// @media (min-width: 768px) {
+//   .container {
+//     max-width: 720px;
+//   }
+// }
+
+// @media (min-width: 992px) {
+//   .container {
+//     max-width: 960px;
+//   }
+// }
+
+// @media (min-width: 1200px) {
+//   .container {
+//     max-width: 1150px;
+//   }
+// }

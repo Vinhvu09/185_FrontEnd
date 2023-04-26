@@ -1,0 +1,34 @@
+@import "../../scss/import.scss";
+.searchBasic {
+  width: 260px;
+  height: 40px;
+  position: relative;
+  border: 1px solid $grey-light-cl;
+  border-radius: 8px;
+  overflow: hidden;
+  input {
+    padding-left: 44px;
+    width: 80%;
+    height: 100%;
+    outline: none;
+    border: none;
+  }
+  ::-webkit-input-placeholder {
+    /* Edge */
+    color: $grey-light-cl;
+  }
+  :-ms-input-placeholder {
+    /* Internet Explorer */
+    color: $grey-light-cl;
+  }
+  ::placeholder {
+    color: #888888;
+  }
+  img {
+    cursor: pointer;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

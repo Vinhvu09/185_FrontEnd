@@ -1,0 +1,19 @@
+@import '../../../../../../../scss/import.scss';
+.weekScheduleItem{
+    position: absolute;
+       width: 100%;
+    font-size: 12px;
+    color: $black-light-cl;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 5;
+    background-color: red;
+    padding: 4px 11px 4px 8px;
+    border-radius: 2px;
+    &__name{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

@@ -1,0 +1,41 @@
+@import "../../scss/import.scss";
+.mainButton {
+  @include flexCenter;
+  background-color: $blue-cl;
+  color: $white-cl;
+  width: 160px;
+  height: 40px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  &.small {
+    width: 130px;
+  }
+  &.big {
+    width: 180px;
+  }
+  &.bigger {
+    width: 210px;
+  }
+  &.white {
+    border: 1px solid $blue-cl;
+    background-color: $white-cl;
+    color: $blue-cl;
+  }
+  img,
+  .component {
+    @include flexCenter;
+    margin-right: 10px;
+    pointer-events: none;
+  }
+  p {
+    pointer-events: none;
+  }
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    svg {
+      margin-right: 10px;
+    }
+  }
+}

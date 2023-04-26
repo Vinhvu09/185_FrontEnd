@@ -1,0 +1,103 @@
+@import "../../scss/import.scss";
+.missionStatusItemCreate {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 14px;
+  border: 1px solid $grey-light-cl;
+  cursor: pointer;
+  &.inProgress {
+    .square {
+      background-color: $grey-light-cl;
+    }
+  }
+  .left {
+    display: flex;
+    align-items: center;
+    .square {
+      margin-right: 16px;
+      width: 12px;
+      height: 12px;
+      border-radius: 2px;
+    }
+    .input {
+      width: 100%;
+      input {
+        width: 100%;
+        outline: none;
+        border: none;
+        font-size: 16px;
+        font-weight: 400;
+      }
+    }
+  }
+  .right {
+    @include flexCenter(space-between);
+    .people {
+      @include flexCenter;
+      justify-content: flex-end;
+      min-width: 116px;
+      position: relative;
+      .person {
+        &.--2 {
+          right: 44px;
+          z-index: 1;
+        }
+        &.--3 {
+          right: 66px;
+          z-index: 0;
+        }
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        top: 0;
+        right: 22px;
+        z-index: 2;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .img {
+        z-index: 99;
+        @include flexCenter;
+      }
+    }
+    .time {
+      display: flex;
+      font-size: 14px;
+      .hour {
+        margin-right: 4px;
+      }
+    }
+    .calendar {
+      @include flexCenter;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid $black-cl;
+      border-style: dashed;
+      position: relative;
+      // .missionCalendarItem {
+      //   position: absolute;
+      //   z-index: 1;
+      //   input {
+      //     opacity: 0;
+      //     cursor: pointer;
+      //     height: 32px;
+      //     width: 32px;
+      //   }
+      // }
+    }
+    .missionStatusItemCreate__options {
+      @include flexCenter(space-between);
+      position: relative;
+      p {
+        position: absolute;
+        right: 48px;
+        font-weight: 600;
+        color: $blue-cl;
+      }
+    }
+  }
+}

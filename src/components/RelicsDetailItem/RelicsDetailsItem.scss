@@ -1,0 +1,73 @@
+@import "../../scss/import.scss";
+.relicsDetailItem {
+  .title {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  .content {
+    position: relative;
+    padding: 30px 24px 0 24px;
+    border: 1px solid $grey-light-cl;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    min-height: 632px;
+    &__empty {
+      @include absCenter;
+      color: #888888;
+      font-weight: 600;
+    }
+    &__text {
+      p {
+        font-size: $fz-small;
+      }
+      img {
+        border-radius: 8px;
+      }
+    }
+    &__video {
+      margin-bottom: 30px;
+      video {
+        width: 100%;
+        border-radius: 8px;
+        margin-top: 20px;
+      }
+    }
+    .emptyImage {
+      width: 100%;
+      height: 600px;
+      @include flexCenter;
+      flex-direction: column;
+      .wrapper {
+        cursor: pointer;
+        text-align: center;
+        p {
+          margin-top: 24px;
+          color: $grey-cl;
+          font-weight: 600;
+        }
+      }
+    }
+    &__text {
+      img {
+        max-width: 100%;
+      }
+    }
+    &__technicals,
+    &__maps {
+      width: 100%;
+      height: 100%;
+      .img {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 8px;
+        margin-bottom: 24px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
