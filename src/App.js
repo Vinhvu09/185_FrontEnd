@@ -40,6 +40,8 @@ import NewPassword from "components/NewPassword/NewPassword";
 function App() {
   const { access } = useSelector((store) => store.users.auth);
 
+  console.log(access);
+
   return (
     <>
       {!access ? (

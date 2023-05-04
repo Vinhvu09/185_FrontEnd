@@ -115,24 +115,35 @@ export default function AddStaff() {
       basic_salary: data.basic_salary.toString(),
       card_number: data.card_number.toString(),
       work_days: data.work_days.toString(),
+      password: "Ps@123456",
+      confirmPassword: "Ps@123456",
     };
+
+    const form = new FormData();
+    form.append("info", JSON.stringify(dataAdd));
+    form.append("avatar", avatar);
+    form.append("signature", signature);
+    form.append("stamp", stamp);
+
     newStaffs = [...newStaffs, dataAdd];
-    postAxios("http://127.0.0.1:4000/api/v1/staff", dataAdd).then((res) => {
+    postAxios("http://127.0.0.1:4000/api/v1/staff", form, {
+      enctype: "multipart/form-data",
+    }).then((res) => {
       if (res.status === "Fail") return;
-      navigate("/admin/staffs");
+      // navigate("/admin/staffs");
     });
     // dispatch(setDataUsers(newStaffs));
   };
 
   const onChangePicture = (e) => {
     if (e.target.getAttribute("id") === "avatar") {
-      setAvatar(URL.createObjectURL(e.target.files[0]));
+      setAvatar(e.target.files[0]);
     }
     if (e.target.getAttribute("id") === "signature") {
-      setSignature(URL.createObjectURL(e.target.files[0]));
+      setSignature(e.target.files[0]);
     }
     if (e.target.getAttribute("id") === "stamp") {
-      setStamp(URL.createObjectURL(e.target.files[0]));
+      setStamp(e.target.files[0]);
     }
     return e.target.files[0];
   };
