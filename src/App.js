@@ -36,11 +36,10 @@ import SearchAdvanced from "./pages/SearchAdvanced/SearchAdvanced";
 import PageNotExist from "pages/404/PageNotExist";
 import ForgotPassword from "pages/ForgotPassword/ForgotPassword";
 import NewPassword from "components/NewPassword/NewPassword";
+import Image3D from "pages/3d/3d";
 
 function App() {
   const { access } = useSelector((store) => store.users.auth);
-
-  console.log(access);
 
   return (
     <>
@@ -81,6 +80,7 @@ function App() {
               <Route path="addstaff" element={<AddStaff />}></Route>
               <Route path="editstaff" element={<EditStaff />}></Route>
               <Route path="director" element={<Director />}></Route>
+              <Route path="3d" element={<Image3D />}></Route>
               <Route
                 path="director/searchAdvanced"
                 element={<SearchAdvanced />}

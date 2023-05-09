@@ -40,8 +40,8 @@ export default function Header() {
 
   const handleSignOut = () => {
     getAxios("/auth/logout").then((res) => {
+      dispatch(resetState());
       if (res.status === "success") {
-        dispatch(resetState());
         Cookies.remove("refresh");
         Cookies.remove("savePassword");
         Cookies.remove("saveCode");
@@ -276,7 +276,7 @@ export default function Header() {
           </div>
           <div className="header__right--info">
             <div className="avatar">
-              <img src={avatar} alt="" />
+              <img src={"http://127.0.0.1:4000/" + profile?.avatar} alt="" />
             </div>
             <div className="information">
               <div className="information__name">{`${profile?.first_name} ${profile?.last_name}`}</div>

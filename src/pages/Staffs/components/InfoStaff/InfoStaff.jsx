@@ -11,6 +11,7 @@ import { setDataUsers } from "../../../../store/Reducer/usersReducer";
 import Switch from "react-switch";
 
 import "./InfoStaff.scss";
+import { getAxios } from "api/Axios";
 
 const roles = [
   { code: "1", name: "Super Admin" },
@@ -133,7 +134,7 @@ export default function InfoStaff() {
                 >
                   <Switch
                     disabled={true}
-                    checked={editUser.online || false}
+                    checked={editUser.isActivate || false}
                     onColor="#00B429"
                     onHandleColor="#ffffff"
                     handleDiameter={18}
@@ -164,7 +165,7 @@ export default function InfoStaff() {
                 className="infostaff__form-profile-right-img"
                 alt=""
                 style={{
-                  backgroundImage: `linear-gradient(360deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%), url(${editUser.avatar})`,
+                  backgroundImage: `linear-gradient(360deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%), url(http://127.0.0.1:4000/${editUser.avatar})`,
                 }}
               />
             </div>

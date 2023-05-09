@@ -12,8 +12,8 @@ export const configAxios = axios.create({
 export const axiosPrivate = axios.create({
   baseURL: "http://127.0.0.1:4000/api/v1",
   headers: {
-    "Access-Control-Allow-Origin": "*",
     "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "*",
   },
   withCredentials: true,
   credentials: "include",
@@ -22,7 +22,9 @@ export const axiosPrivate = axios.create({
 export const authUserLogin = async (url, data) => {
   try {
     const response = await configAxios.post(url, data, {
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
     return response.data;
   } catch (error) {

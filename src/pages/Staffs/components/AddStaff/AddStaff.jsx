@@ -120,10 +120,12 @@ export default function AddStaff() {
     };
 
     const form = new FormData();
-    form.append("info", JSON.stringify(dataAdd));
-    form.append("avatar", avatar);
-    form.append("signature", signature);
-    form.append("stamp", stamp);
+    Object.keys(dataAdd).forEach((key) => {
+      form.set(key, dataAdd[key]);
+    });
+    form.set("avatar", avatar);
+    form.set("signature", signature);
+    form.set("stamp", stamp);
 
     newStaffs = [...newStaffs, dataAdd];
     postAxios("http://127.0.0.1:4000/api/v1/staff", form, {
@@ -261,7 +263,9 @@ export default function AddStaff() {
                     <div
                       className="inputImage__image--avatar"
                       style={{
-                        backgroundImage: `linear-gradient(360deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%), url(${avatar})`,
+                        backgroundImage: `linear-gradient(360deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%), url(${URL.createObjectURL(
+                          avatar
+                        )})`,
                       }}
                     ></div>
                   )}
@@ -435,7 +439,9 @@ export default function AddStaff() {
                     <div
                       className="inputImage__image--avatar"
                       style={{
-                        backgroundImage: `url(${signature})`,
+                        backgroundImage: `url(${URL.createObjectURL(
+                          signature
+                        )})`,
                         width: `${signature ? `120px` : `calc(32.5% - 20px)`}`,
                       }}
                     ></div>
@@ -486,7 +492,7 @@ export default function AddStaff() {
                     <div
                       className="inputImage__image--avatar"
                       style={{
-                        backgroundImage: `url(${stamp})`,
+                        backgroundImage: `url(${URL.createObjectURL(stamp)})`,
                         width: `${stamp ? `120px` : `calc(32.5% - 20px)`}`,
                       }}
                     ></div>

@@ -1,4 +1,5 @@
 import { yupResolver } from "@hookform/resolvers/yup";
+import { patchAxios } from "api/Axios";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
@@ -111,38 +112,44 @@ export default function EditStaff() {
   const onSubmit = (data) => {
     const newStaffs = staffs.map((staff) => {
       if (staff.id === editUser.id) {
+        dispatch(setDataUsers(newStaffs));
         return { ...data, id: editUser.id };
       } else {
         return staff;
       }
     });
-    dispatch(setDataUsers(newStaffs));
-    if (editMe) {
-      navigate("/admin/me");
-    } else navigate("/admin/staffs");
+
+    const form = new FormData();
+    Object.keys(data).forEach((key) => {
+      form.append(key, data[key]);
+    });
+    form.set("avatar", avatar);
+    form.set("signature", signature);
+    form.set("stamp", stamp);
+    patchAxios("/staff/" + editUser.id, form).then((res) => {
+      if (res.status === "success") {
+        if (editMe) {
+          navigate("/admin/me");
+        } else navigate("/admin/staffs");
+      }
+    });
   };
   const onChangePicture = (e) => {
     if (e.target.getAttribute("id") === "avatar") {
-      setAvatar(URL.createObjectURL(e.target.files[0]));
+      setAvatar(e.target.files[0]);
     }
     if (e.target.getAttribute("id") === "signature") {
-      setSignature(URL.createObjectURL(e.target.files[0]));
+      setSignature(e.target.files[0]);
     }
     if (e.target.getAttribute("id") === "stamp") {
-      setStamp(URL.createObjectURL(e.target.files[0]));
+      setStamp(e.target.files[0]);
     }
     return e.target.files[0];
   };
   function resetForm() {
-    let objNew;
-    for (const key in editUser) {
-      objNew = {
-        ...editUser,
-        online: key === "online" ? !!editUser[key] : undefined,
-      };
-    }
     if (editUser) {
       const { avatar, signature, stamp, ...resetData } = editUser;
+      console.log(resetData);
       reset(resetData);
       setValue("avatar", avatar);
       setAvatar(avatar);
@@ -223,6 +230,7 @@ export default function EditStaff() {
       setDistricts(tempDistricts);
     }
   }, [getValues("province")]);
+
   useEffect(() => {
     if (getValues("district")) {
       const tempDistricts = provinces.filter(
@@ -234,6 +242,7 @@ export default function EditStaff() {
       setWards(tempWards);
     }
   }, [getValues("district")]);
+
   const handleClickEditMe = () => {
     setEditMeStart(true);
   };
@@ -328,7 +337,11 @@ export default function EditStaff() {
                     <div
                       className="inputImage__image--avatar"
                       style={{
-                        backgroundImage: `linear-gradient(360deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%), url(${avatar})`,
+                        backgroundImage: `linear-gradient(360deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%), url(${
+                          avatar instanceof File
+                            ? URL.createObjectURL(avatar)
+                            : "http://127.0.0.1:4000/" + avatar
+                        })`,
                       }}
                     ></div>
                   )}
@@ -393,8 +406,8 @@ export default function EditStaff() {
             <div>
               <InputSwitch
                 control={control}
-                name="online"
-                id="online"
+                name="isActivate"
+                id="isActivate"
                 label="Trạng thái"
               />
             </div>
@@ -526,7 +539,7 @@ export default function EditStaff() {
                     <div
                       className="inputImage__image--avatar"
                       style={{
-                        backgroundImage: `url(${signature})`,
+                        backgroundImage: `url(http://127.0.0.1:4000/${signature})`,
                         width: `${signature ? `120px` : `calc(32.5% - 20px)`}`,
                       }}
                     ></div>
@@ -577,7 +590,7 @@ export default function EditStaff() {
                     <div
                       className="inputImage__image--avatar"
                       style={{
-                        backgroundImage: `url(${stamp})`,
+                        backgroundImage: `url(http://127.0.0.1:4000/${stamp})`,
                         width: `${stamp ? `120px` : `calc(32.5% - 20px)`}`,
                       }}
                     ></div>

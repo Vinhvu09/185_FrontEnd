@@ -41,6 +41,7 @@ function staffMapping(data = []) {
       address,
       code,
       state,
+      isActivate,
       jobInfo: { department, position, role },
       paymentInfo: {
         signature,
@@ -76,6 +77,7 @@ function staffMapping(data = []) {
       address,
       code,
       state,
+      isActivate,
     };
   });
 }
@@ -165,6 +167,7 @@ export default function Staffs() {
   // console.log(getAxiosDB)
 
   const changePageUserInfo = (data) => {
+    console.log(data);
     dispatch(setEditUser(data));
     navigate("/admin/infostaff");
   };
@@ -355,10 +358,14 @@ export default function Staffs() {
                     <td>
                       <div className="tableData__state">
                         <div
-                          className={staff.online ? `circleOn` : `circleOff`}
+                          className={
+                            staff.isActivate ? `circleOn` : `circleOff`
+                          }
                         >{``}</div>
                         <span>
-                          {staff.online ? `Đang hoạt động` : `Đang ngoại tuyến`}
+                          {staff.isActivate
+                            ? `Đang hoạt động`
+                            : `Đang ngoại tuyến`}
                         </span>
                       </div>
                     </td>
