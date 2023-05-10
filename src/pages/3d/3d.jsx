@@ -53,6 +53,10 @@ const Image3D = () => {
       label: "ngoMonHue",
       name: "ngoMonHue",
     },
+    {
+      label: "Lotus",
+      name: "Lotus",
+    },
   ]);
 
   const [item, setItem] = useState(nav[0]);
