@@ -1,3 +1,4 @@
+import { getAxios } from "api/Axios";
 import React, {
   forwardRef,
   useCallback,
@@ -11,12 +12,16 @@ import { Unity, useUnityContext } from "react-unity-webgl";
 const buildUrl = "http://127.0.0.1:4000/";
 
 const UnityComponent = forwardRef(function ({ url }, ref) {
-  const { unityProvider, unload } = useUnityContext({
-    loaderUrl: buildUrl + url + ".loader.js",
-    dataUrl: buildUrl + url + ".data.gz",
-    frameworkUrl: buildUrl + url + ".framework.js.gz",
-    codeUrl: buildUrl + url + ".wasm.gz",
-  });
+  const { unityProvider, unload, UNSAFE__detachAndUnloadImmediate } =
+    useUnityContext({
+      loaderUrl: buildUrl + url + "/" + url + ".loader.js",
+      dataUrl: buildUrl + url + "/" + url + ".data.br",
+      frameworkUrl: buildUrl + url + "/" + url + ".framework.js.br",
+      codeUrl: buildUrl + url + "/" + url + ".wasm.br",
+      companyName: "Đại Quốc Việt",
+      productName: "Admin dashboard",
+      productVersion: "1.0",
+    });
 
   useImperativeHandle(
     ref,
@@ -30,13 +35,19 @@ const UnityComponent = forwardRef(function ({ url }, ref) {
     [unload]
   );
 
+  useEffect(() => {
+    return () => {
+      UNSAFE__detachAndUnloadImmediate();
+    };
+  }, [UNSAFE__detachAndUnloadImmediate]);
+
   return (
     <Unity
       unityProvider={unityProvider}
-      devicePixelRatio={2}
+      devicePixelRatio={4}
       style={{
-        height: 1000,
-        width: 1000,
+        height: "100%",
+        width: "100%",
       }}
     />
   );
@@ -44,44 +55,40 @@ const UnityComponent = forwardRef(function ({ url }, ref) {
 
 const Image3D = () => {
   const ref = useRef(null);
-  const [nav, setNav] = useState([
-    {
-      label: "HackerHome",
-      name: "HackerHome",
-    },
-    {
-      label: "ngoMonHue",
-      name: "ngoMonHue",
-    },
-    {
-      label: "Lotus",
-      name: "Lotus",
-    },
-  ]);
+  const [nav, setNav] = useState([]);
+  const [data, setData] = useState();
 
-  const [item, setItem] = useState(nav[0]);
-  console.log(item);
+  useEffect(() => {
+    getAxios("/artefact/folder-path").then((res) => {
+      if (res?.status === "success") {
+        setNav(res.data);
+        setData(res.data[0]);
+      }
+    });
+  }, []);
 
   return (
     <>
       <ul style={{ display: "flex" }}>
         {nav.map((x, idx) => (
           <li
-            key={`${x.name}-${idx}`}
+            key={`${x}-${idx}`}
             style={{
               padding: 20,
               border: "1px solid",
             }}
             onClick={async () => {
-              await ref.current.unloadInstance();
-              setItem(x);
+              if (ref.current) {
+                await ref.current.unloadInstance();
+              }
+              setData(x);
             }}
           >
-            {x.label}
+            {x}
           </li>
         ))}
       </ul>
-      <UnityComponent ref={ref} key={`${item.name}`} url={item.name} />
+      {data && <UnityComponent ref={ref} key={`${data}`} url={data} />}
     </>
   );
 };
